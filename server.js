@@ -1,6 +1,6 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {data:'dummy'};
-
+projectData = {};
+const m_data = [];
 // Require Express to run server and routes
 const express = require('express');
 // Start up an instance of app
@@ -27,7 +27,8 @@ const server = app.listen(port,()=>{
 
 //GET route
 app.get('/all',(request,response)=>{
-    response.send(projectData);
+    console.log(m_data);
+    response.send(m_data);
 });
 
 //POST route to check if post worked
@@ -37,6 +38,8 @@ app.post('/add',(request,response)=>{
 
 //POST data
 app.post('/user', (request,response)=>{
-    projectData.push(request.body);
+    console.log('Data received on server side');
+    response.send('Data received on here');
+    m_data.push(request.body);
 });
 
