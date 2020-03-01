@@ -2,7 +2,7 @@
 var api_key = '750c257ad74cd91d9a1d54e0c739b736';
 const fetch = require('express');
 var baseURL = `http://api.openweathermap.org/data/2.5/weather?q=${userZip}&appid=${api_key}`;
-var hardCode ='http://api.openweathermap.org/data/2.5/weather?q=${91763}&appid=${750c257ad74cd91d9a1d54e0c739b736}'
+var hardCode ='http://api.openweathermap.org/data/2.5/weather?q=91763&appid=750c257ad74cd91d9a1d54e0c739b736'
 /// Async POST
 const postData = async ( url = '', data = {})=>{
 
