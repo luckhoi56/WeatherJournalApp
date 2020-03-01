@@ -39,7 +39,10 @@ app.post('/add',(request,response)=>{
 //POST data
 app.post('/user', (request,response)=>{
     console.log('Data received on server side');
-    response.send('Data received on here');
+    
     m_data.push(request.body);
+    console.log(m_data);
+    response.send(m_data.slice(-1)[0]);
+    
 });
 
