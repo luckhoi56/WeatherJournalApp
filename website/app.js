@@ -50,18 +50,7 @@ const postData = async ( url = '', data = {})=>{
     }
 };
 
-// Async GET
-const retrieveData = async (url='') =>{ 
-  const request = await fetch(url);
-  try {
-  // Transform into JSON
-  const allData = await request.json()
-  }
-  catch(error) {
-    console.log("error", error);
-    // appropriately handle the error
-  }
-};
+
 //Async API GET
 const getInformationFromAPI = async(baseURL)=>{
   const res = await fetch(baseURL)
@@ -76,8 +65,21 @@ const getInformationFromAPI = async(baseURL)=>{
   }
 };
 
-function updateUI(){
+const updateUI= async() =>{
+  const request = await fetch("http://localhost:3000/all");
+  try {
+  // Transform into JSON
+  const m_entry = await request.json();
+  console.log(m_entry);
+  document.getElementById('date').innerHTML =m_entry.current_date;
+  document.getElementById('temp').innerHTML =m_entry.temp;
+  document.getElementById('content').innerHTML =m_entry.userInput;
 
+  }
+  catch(error) {
+    console.log("error", error);
+    // appr
+}
 }
 
 
